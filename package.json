@@ -8,6 +8,7 @@
     "dev": "nodemon src/main.js"
   },
   "_moduleAliases": {
+    "@assets": "./src/assets",
     "@configs": "./src/configs",
     "@controllers": "./src/controllers",
     "@middlewares": "./src/middlewares",
@@ -20,8 +21,10 @@
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
+    "csv-parse": "^5.3.3",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
+    "express-fileupload": "^1.4.0",
     "module-alias": "^2.2.2",
     "mysql2": "^2.3.3"
   },
