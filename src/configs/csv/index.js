@@ -1,7 +1,7 @@
 const { parse } = require("csv-parse/sync");
 
 const readCsv = (buffer) => {
-  const result = parse(buffer, { delimiter: ";", columns: true });
+  const result = parse(buffer, { columns: true });
 
   return result;
 };
