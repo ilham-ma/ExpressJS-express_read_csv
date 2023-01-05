@@ -7,6 +7,7 @@
       "@assets/*": ["assets/*"],
       "@configs/*": ["configs/*"],
       "@controllers/*": ["controllers/*"],
+      "@middlewares/*": ["middlewares/*"],
       "@routes/*": ["routes/*"],
       "@utils/*": ["utils/*"]
     }
