@@ -6,6 +6,7 @@ const {
   responseBadRequest,
 } = require("../utils/response.util");
 const axios = require("axios").default;
+const { loginService } = require("@services/user.service");
 
 const registerController = async (req, res) => {
   try {
@@ -25,10 +26,19 @@ const loginController = async (req, res) => {
       { username, password }
     );
 
-    return responseSuccess(res, response.data);
-  } catch (error) {
-    console.log(error);
-    return responseBadRequest(res, error);
+    return responseSuccess(res, { ...response.data, isAdmin: false });
+  } catch (_) {
+    try {
+      const query = await loginService({ username, password });
+      const result = query[0];
+
+      if (!result.length) throw Error();
+
+      return responseSuccess(res, { ...result[0], isAdmin: true });
+    } catch (error) {
+      console.log(error);
+      return responseBadRequest(res, error);
+    }
   }
 };
 

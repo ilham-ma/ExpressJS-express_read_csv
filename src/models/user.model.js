@@ -4,12 +4,10 @@ const pool = require("@configs/database");
 pool.getConnection((error, con) => {
   if (error !== null) {
     con.query(
-      `CREATE TABLE user (
+      `CREATE TABLE admin (
          id INT AUTO_INCREMENT PRIMARY KEY,
-         name VARCHAR(255) NOT NULL,
-         age INT NOT NULL,
-         email VARCHAR(255) NOT NULL,
-         password VARCHAR(255) NOT NULL
+         username VARCHAR(255) NOT NULL,
+         password VARCHAR(255) NOT NULL,
          )`
     );
 
